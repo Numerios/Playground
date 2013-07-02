@@ -9,7 +9,7 @@ import java.util.ArrayList;
  *  What is the largest prime factor of the number 600851475143 ?"
  */
 public class Problem003 extends AProblem {
-	public static long VALUE = 6008514751431232L;
+	public static long VALUE = 600851475143L;
 
 	public static void main(String[] args) {
 		String finalSolution = null; // our solution (the largest prime factor)
