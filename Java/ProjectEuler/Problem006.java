@@ -5,7 +5,7 @@
  * 
  * "Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum."
  */
-public class Problem006 {
+public class Problem006 extends AProblem{
 	public static int RANGE = 100; // our static variable of the range we'll use when deciding from which range should we grab numbers
 
 	public static void main(String[] args) {
