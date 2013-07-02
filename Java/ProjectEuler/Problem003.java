@@ -41,20 +41,22 @@ public class Problem003 extends AProblem {
 					+ finalSolution + "!");
 		} 
 	}
-
-	public static boolean isPrime(long l) { // checks if initial value (l) is prime
-		if (l <= 0) return false; // all numbers that are smaller or equal to 0 are never prime!
-		if (l <= 3) { // all integers that are smaller or equal to 3 are always prime!
+	
+	public static boolean isPrime(long l){ // checks if initial value (l) is prime
+		if(l <= 1){ // all numbers smaller or equal to 1 are not prime!
+			return false;
+		}else if(l <= 3){ // all numbers between 1 and 3 (3 included) are primes!
 			return true;
-		} else {
-			for (long i = 4; i <= getSqrt(l); i++) {  // for all numbers (i) that are greater than 4 and smaller or equal to the square root of the initial value (l) do:
-				if (l % i == 0) { // if the square root of the initial value (l) is divisible by any number (i): 
-					return false; // initial value is not prime!
-				} else if (i == getSqrt(l)) { // if the square root of the initial value (l) is equal to the number (i) we're checking:
-					return true; // initial value is indeed prime!
+		}else{
+			if (l % 2 == 0){ // all numbers divisible by 2 are not primes!
+				return false;
+			}
+			for (long m = 3, max = getSqrt(l); m <= max; m += 2){ // for all numbers that are between our value (l) and the square root of our value (l) do:
+				if (l % m == 0){ // all values (l) that are divisible by any of our numbers (m) are not primes!
+					return false;
 				}
 			}
-			return false; // if something goes horribly wrong, value is not prime!
+			return true; // all values (l) that were not divided by any of our numbers (m) are primes!
 		}
 	}
 
