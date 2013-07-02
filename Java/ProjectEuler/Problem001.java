@@ -12,11 +12,11 @@ public class Problem001 extends AProblem{
 
 	public static void main(String[] args) {
 		int solution = 0;
-		for (int i = 1; i < RANGE; i++) {
-			for (int j = 0; j < MULTIPLIERS.length; j++) {
-				if (i % MULTIPLIERS[j] == 0) {
-					solution += i;
-					break;
+		for (int i = 1; i < RANGE; i++) { //for each number that is between 1 and RANGE do:
+			for (int j = 0; j < MULTIPLIERS.length; j++) { //for each number that is in MULTIPLIERS do:
+				if (i % MULTIPLIERS[j] == 0) { //if a current number (i) is divisible by current multiplier (j)
+					solution += i; //add current number (i) to solution sum
+					break; //prevents adding two same numbers to the solution sum (happens when there is a number that is divisible by two or more multipliers)
 				}
 			}
 		}
